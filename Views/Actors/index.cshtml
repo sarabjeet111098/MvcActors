@@ -1,0 +1,74 @@
+@model IEnumerable<Actor>
+
+
+@* <table class = "table">
+    <thead>
+        <tr>
+            <th scope = "col">Id</th>
+            <th scope = "col">StageName</th>
+            <th scope = "col">FirstName</th>
+            <th scope = "col">LastName</th>
+            <th scope = "col">Age</th>
+            <th scope = "col">Image</th>
+            <th scope = "col">Description</th>
+            <th scope = "col">BestMovie</th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var actor in Model){
+            <tr>
+                <th scope="row">@actor.Id</th>
+                <td>@actor.StageName</td>
+                <td>@actor.FirstName</td>
+                <td>@actor.LastName</td>
+                <td>@actor.Age</td>
+                <td>@actor.Image</td>
+                <td>@actor.Description</td>
+                <td>@actor.BestMovie</td>
+            </tr>
+        }
+        
+            
+        
+    </tbody>
+</table> *@
+
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 col-xs-6 border-primary mb-3">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-header text-white bg-info">
+                            <p class="card-text">
+                                <h5 class="card-title">
+                                    @item.StageName
+                                    
+                                </h5>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="@item.Image" width="100%" alt="@item.StageName">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <p class="card-text">@item.Description</p>
+                            <p class="card-text"><b>First Name : </b>@item.FirstName</p>
+                            <p class="card-text"><b>Last Name: </b>@item.LastName</p>
+                            <p class="card-text"><b>Age : </b>@item.Age</p>
+                            <p class="card-text"><b>Best Movie: </b>@item.BestMovie</p>
+                            
+
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        
+    }
+</div>
